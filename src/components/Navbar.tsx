@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { useActiveSection } from '@/hooks/useActiveSection';
 
 export default function Navbar() {
-    const sectionIds = ['home', 'aboutMe', 'projects', 'experiences'];
+    const sectionIds = ['home', 'about-me', 'projects', 'experiences'];
     const activeSection = useActiveSection(sectionIds);
 
     return (
@@ -60,9 +60,9 @@ export default function Navbar() {
                 />
             </Link>
             <Link
-                href='#aboutMe'
+                href='#about-me'
                 className={`p-2 rounded-lg transition-all duration-150  ${
-                    activeSection === 'aboutMe'
+                    activeSection === 'about-me'
                         ? 'bg-muted-text/50'
                         : 'bg-transparent hover:bg-muted-text/20'
                 }`}

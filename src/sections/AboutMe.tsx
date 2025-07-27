@@ -47,10 +47,10 @@ export default function AboutMe() {
                     </div>
                     {/* Projects */}
                     <div className='w-full flex flex-col md:items-end z-10 relative p-4'>
-                        <div className='w-full flex flex-col p-16 md:p-24 lg:p-32 gap-16 md:gap-24 xl:gap-32 bg-stroke-background border-1 border-stroke rounded-2xl relative group'>
+                        <div className='w-full flex flex-col px-8 py-16 md:px-16 md:py-24 lg:px-16 lg:py-32 gap-16 md:gap-24 xl:gap-32 bg-stroke-background border-1 border-stroke rounded-2xl relative group'>
                             {/* Project Info */}
                             <h3
-                                className={`${myFont.className} text-5xl md:text-6xl lg:text-5xl xl:text-7xl font-medium text-center underline decoration-muted-text/20 decoration-6 underline-offset-10 leading-tight`}
+                                className={`${myFont.className} text-2xl md:text-5xl lg:text-5xl xl:text-7xl font-medium text-center underline decoration-muted-text/20 decoration-6 underline-offset-10 leading-normal md:leading-tight`}
                             >
                                 Her projenin <br />
                                 kusursuz olmasını <br />

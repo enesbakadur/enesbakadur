@@ -46,11 +46,10 @@ const HeroSection = () => {
                     Selam, Ben Enes.
                 </h1>
                 <p className='text-muted-text text-lg md:w-4/5 lg:w-3/5 xl:w-2/5 mx-auto'>
-                    Ben Bursa'da yaşayan bir frontend developer'ım. Aynı zamanda
-                    bir UI/UX designer'ım ve dolayısıyla kendim tasarlayıp
-                    kendim kodluyorum. Benimle iletişime geçmek için aşağıdaki
-                    mesaj butonuna tıklayarak iletişim bilgilerimi
-                    görebilirsiniz.
+                    Bursa'da yaşayan bir frontend developer ve UI/UX designer
+                    olarak, arayüzleri hem tasarlıyor hem de kodluyorum.
+                    Projeleriniz için tasarımdan son ürüne kadar olan süreçte
+                    sizlere yardımcı olabilirim.
                 </p>
             </div>
             {/* Lines */}

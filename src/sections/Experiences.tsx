@@ -1,14 +1,9 @@
 import { HugeiconsIcon } from '@hugeicons/react';
 import { Timer02Icon, BrowserIcon } from '@hugeicons/core-free-icons';
-import { Gloria_Hallelujah, JetBrains_Mono } from 'next/font/google';
+import { JetBrains_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import ExperiencesList from '@/components/ExperiencesList';
 
-const gloriaHallelujah = Gloria_Hallelujah({
-    subsets: ['latin'],
-    weight: ['400'],
-    variable: '--font-gloria-hallelujah',
-});
 export const jetBrainsMono = JetBrains_Mono({
     subsets: ['latin'],
     weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
@@ -112,7 +107,7 @@ export default function Experiences() {
                 <div className='w-full border-t-1 border-muted-text/20 flex justify-center'>
                     <div className='w-full flex items-center justify-center p-2 md:p-3 lg:p-4 relative'>
                         <p
-                            className={`${jetBrainsMono.className} text-muted-text text-[0.625rem] md:text-xs uppercase antialiased whitespace-nowrap hidden md:block text-center`}
+                            className={`${jetBrainsMono.className} text-muted-text text-[0.625rem] md:text-xs uppercase antialiased whitespace-nowrap text-center`}
                         >
                             YENİ BİR İŞ ARAYIŞIM VAR.
                         </p>

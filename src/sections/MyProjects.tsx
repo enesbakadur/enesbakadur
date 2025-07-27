@@ -76,7 +76,7 @@ export default function MyProjects() {
                                 className='w-full flex max-md:flex-col md:items-center p-4 max-md:gap-8 border-b-1 last:border-b-0 border-muted-text/20'
                             >
                                 {/* Project Info */}
-                                <div className='flex flex-col gap-4 md:gap-6 lg:gap-8 md:w-1/3'>
+                                <div className='flex flex-col gap-4 md:gap-6 lg:gap-8 md:w-1/3 md:pr-2 lg:pr-4'>
                                     {/* Project Info */}
                                     <div className='flex flex-col gap-2'>
                                         <a
@@ -109,7 +109,7 @@ export default function MyProjects() {
                                         {project.tags.map((tag, index) => (
                                             <div
                                                 key={index}
-                                                className='bg-muted-text/20 rounded-md py-1 px-2'
+                                                className='bg-muted-background rounded-md py-1 px-2'
                                             >
                                                 <p
                                                     className={`${jetBrainsMono.className} text-xs uppercase`}
@@ -166,7 +166,7 @@ export default function MyProjects() {
                 <div className='w-full border-t-1 border-muted-text/20 flex justify-center'>
                     <div className='w-full flex items-center justify-center p-2 md:p-3 lg:p-4 relative'>
                         <p
-                            className={`${jetBrainsMono.className} text-muted-text text-[0.625rem] md:text-xs uppercase antialiased whitespace-nowrap hidden md:block text-center`}
+                            className={`${jetBrainsMono.className} text-muted-text text-[0.625rem] md:text-xs uppercase antialiased whitespace-nowrap text-center`}
                         >
                             Daha Fazlası Yakında Eklenecek.
                         </p>

@@ -1,132 +1,112 @@
-'use client';
-import AboutMeCard from '@/components/AboutMeCard';
-import SkillsCard from '@/components/SkillsCard';
-import {
-    SourceCodeSquareIcon,
-    WebDesign01Icon,
-} from '@hugeicons/core-free-icons';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Download01Icon, EyeIcon } from '@hugeicons/core-free-icons';
+import { JetBrains_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
+import ExperiencesList from '@/components/ExperiencesList';
+
+export const jetBrainsMono = JetBrains_Mono({
+    subsets: ['latin'],
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
+    display: 'swap',
+    variable: '--font-jetbrains-mono', // İsteğe bağlı (className da gelecek zaten)
+});
+
+const myFont = localFont({
+    src: '../fonts/BluuNext-Bold.otf',
+});
 
 export default function AboutMe() {
-    const containerRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ['start end', 'end start'],
-    });
-
-    const opacity = useTransform(
-        scrollYProgress,
-        [0, 0.3, 0.7, 1],
-        [0, 1, 1, 0]
-    );
-    const y = useTransform(
-        scrollYProgress,
-        [0, 0.3, 0.7, 1],
-        [200, 0, 0, -200]
-    );
-    const rotate = useTransform(
-        scrollYProgress,
-        [0, 0.3, 0.7, 1],
-        [15, 0, 0, -15]
-    );
-
-    const skillsRef = useRef(null);
-    const skillsInView = useInView(skillsRef, { amount: 0.3 });
+    const experiencesList = ExperiencesList;
 
     return (
         <section
-            ref={containerRef}
-            className='min-h-screen overflow-x-hidden items-start !py-20'
-            id='aboutMe'
+            className='flex flex-col px-4 gap-8 md:gap-10 lg:gap-12 relative pt-20 md:pt-24 lg:pt-28'
+            id='about-me'
         >
-            <div className='container flex flex-col gap-4 md:gap-8'>
-                <div className='group grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8'>
-                    {/* Summary Card */}
-                    <motion.div
-                        style={{ opacity, y, rotate }}
-                        transition={{ duration: 2, ease: 'easeOut' }}
-                        className='transition-all duration-300 group-hover:blur-[2px] group-focus:blur-[2px] group-active:blur-[2px] hover:!blur-none focus:!blur-none active:!blur-none'
-                    >
-                        <AboutMeCard
-                            title='Hakkımda'
-                            text="1998 yılında Bursa'da doğdum. Oldukça erken yaşta Adobe Photoshop ile tanışıp lise son sınıfa kadar birçok Adobe programını profesyonel düzeyde kullanmaya başladım. Kariyerime grafik tasarımcı olarak başladım ve zamanla UI/UX tasarımı ve frontend geliştirme konularında yetkinlik kazandım. Tasarım ve yazılım becerilerimi birleştirerek, kullanıcı dostu ve estetik çizgisi olan ürünler tasarlama ve geliştirme konularında oldukça tecrübe edindim."
-                        />
-                    </motion.div>
-                    <motion.div
-                        style={{
-                            opacity,
-                            y,
-                            rotate: useTransform(rotate, (r) => -r),
-                        }}
-                        transition={{ duration: 2, ease: 'easeOut', delay: 3 }}
-                        className='transition-all duration-300 group-hover:blur-[2px] group-focus:blur-[2px] group-active:blur-[2px] hover:!blur-none focus:!blur-none active:!blur-none'
-                    >
-                        <AboutMeCard
-                            title='Hedeflerim'
-                            text='Grafik tasarım ve UI/UX alanlarındaki deneyimlerimi, frontend geliştirme ile birleştirerek
-                        meslek hayatımı bu doğrultuda ilerletmek istiyorum. Tasarım ve yazılım alanındaki bilgi
-                        birikimimin, kullanıcı odaklı ve estetik projeler geliştirmeme önemli katkılar sağladığına
-                        inanıyorum. Sürekli öğrenme ve yeni teknolojilere adapte olma tutkusuyla, dinamik ve iş
-                        birliğine açık bir ekipte çalışarak hem bireysel hem de kolektif başarılar elde etmek
-                        istiyorum.'
-                        />
-                    </motion.div>
+            <div className='relative flex flex-col w-[98%] md:w-[85%] lg:w-[70%] mx-auto border-y-1 border-muted-text/20'>
+                {/* Content */}
+                <div className='w-full'>
+                    {/* Section Title */}
+                    <div className='flex flex-col gap-8 border-b-1 border-muted-text/20 p-4 pb-10 z-10 relative'>
+                        <div className='size-10 md:size-11 lg:size-12 rounded-full bg-muted-text/20 flex items-center justify-center p-2 md:p-3'>
+                            <HugeiconsIcon
+                                icon={EyeIcon}
+                                strokeWidth={1.5}
+                                className='size-full'
+                            />
+                        </div>
+
+                        <h2
+                            className={`${myFont.className} text-3xl md:text-4xl lg:text-5xl w-full md:w-1/3 font-medium md:pr-2`}
+                        >
+                            Ben. <br />
+                            <span className='text-muted-text'>
+                                Enes Bakadur hakkında daha fazlası.
+                            </span>
+                        </h2>
+                    </div>
+                    {/* Projects */}
+                    <div className='w-full flex flex-col md:items-end z-10 relative p-4'>
+                        <div className='w-full flex flex-col p-16 md:p-24 lg:p-32 gap-16 md:gap-24 xl:gap-32 bg-stroke-background border-1 border-stroke rounded-2xl relative group'>
+                            {/* Project Info */}
+                            <h3
+                                className={`${myFont.className} text-5xl md:text-6xl lg:text-5xl xl:text-7xl font-medium text-center underline decoration-muted-text/20 decoration-6 underline-offset-10 leading-tight`}
+                            >
+                                Her projenin <br />
+                                kusursuz olmasını <br />
+                                hedefleyen biri.
+                            </h3>
+                            <p className='text-muted-text text-base md:text-lg lg:text-xl text-justify w-full xl:w-4/5 mx-auto leading-snug'>
+                                Tasarım ve frontend geliştirme alanlarını
+                                birleştirerek kullanıcı odaklı dijital ürünler
+                                geliştirme konusunda uzmanlaşmış bir
+                                profesyonelim. Adobe ürün ailesiyle başladığım
+                                kariyerimde, UI/UX tasarımı ve React/Next.js
+                                tabanlı frontend geliştirme yetkinlikleri
+                                kazandım. Modern araçlarla güçlü kullanıcı
+                                deneyimi sağlayan arayüzler tasarlıyor ve
+                                kodluyorum. <br /> <br />
+                                Freelancer olarak ve ekip içinde edindiğim
+                                deneyimlerle, hem bağımsız hem de takım
+                                çalışmasına yatkın bir şekilde projelerde
+                                sorumluluk alabiliyorum. <br /> <br /> Hedefim,
+                                sürekli gelişen teknolojilere adapte olarak
+                                estetik ve fonksiyonel çözümler üretmek ve katma
+                                değer sağlayan projelerde yer almak.
+                            </p>
+                            <div className='absolute -top-[2px] -right-[2px] origin-top-right size-18 md:size-20 bg-gradient-to-tr from-stroke to-main-background from-[49.5%] to-[50.5%] rounded-bl-2xl group-hover:scale-140 transition-all duration-300'></div>
+                        </div>
+                    </div>
                 </div>
-                <div
-                    className='grid grid-cols-1 gap-4 md:gap-8'
-                    id='skills'
-                    ref={skillsRef}
-                >
-                    <motion.div
-                        initial={{ opacity: 0, x: 100 }}
-                        animate={skillsInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{
-                            duration: 0.8,
-                            ease: 'easeOut',
-                            delay: skillsInView ? 0.4 : 0,
-                        }}
-                    >
-                        <SkillsCard
-                            icon={SourceCodeSquareIcon}
-                            title='Yazılım'
-                            text='Üniversiteden mezun olduğumdan beri (2022) yazılım alanında kendimi geliştirmeye devam ediyorum. Bu süreçte tam zamanlı olarak çalıştığım işlerin yanı sıra freelancer olarak da tecrübe edinme fırsatları yakaladım.'
-                            skills={[
-                                'Javascript',
-                                'Typescript',
-                                'React',
-                                'Next.js',
-                                'Tailwind CSS',
-                                'Bootstrap',
-                                'Uikit',
-                                'HTML',
-                                'CSS',
-                            ]}
-                        />
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={skillsInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{
-                            duration: 0.8,
-                            ease: 'easeOut',
-                            delay: skillsInView ? 0.8 : 0,
-                        }}
-                    >
-                        <SkillsCard
-                            icon={WebDesign01Icon}
-                            title='Tasarım'
-                            text='Üniversiteden mezun olduğumdan beri (2022) yazılım alanında kendimi geliştirmeye devam ediyorum. Bu süreçte tam zamanlı olarak çalıştığım işlerin yanı sıra freelancer olarak da tecrübe edinme fırsatları yakaladım.'
-                            skills={[
-                                'Adobe Photoshop',
-                                'Adobe Illustrator',
-                                'Adobe XD',
-                                'Adobe Premiere Pro',
-                                'Adobe Lightroom',
-                                'Figma',
-                            ]}
-                        />
-                    </motion.div>
+                {/* Lines */}
+                <div className='absolute inset-0 items-center justify-center flex flex-col pointer-events-none'>
+                    <div className='w-full h-full flex'>
+                        <div className='w-1/2 md:w-1/3 h-full border-x-1 border-muted-text/20'></div>
+                        <div className='w-1/2 md:w-1/3 h-full border-r-1 border-muted-text/20 hidden md:block'></div>
+                        <div className='w-1/2 md:w-1/3 h-full border-r-1 border-muted-text/20'></div>
+                    </div>
+                </div>
+                <div className='w-full border-t-1 border-muted-text/20 flex justify-center'>
+                    <div className='w-full flex items-center justify-center p-2 md:p-3 lg:p-4 relative'>
+                        <a
+                            href='/Enes Bakadur CV.pdf'
+                            download='Enes Bakadur CV.pdf'
+                            className={`${jetBrainsMono.className} text-muted-text text-sm md:text-base uppercase antialiased whitespace-nowrap text-center bg-background hover:bg-muted-background transition-all duration-300 rounded-md px-4 py-2 inline-flex items-center gap-2 md:gap-3 cursor-pointer group`}
+                        >
+                            <HugeiconsIcon
+                                icon={Download01Icon}
+                                strokeWidth={1.5}
+                                className='size-5 group-hover:translate-y-0.5 transition-all duration-300'
+                            />
+                            CV'Mİ İNDİR
+                        </a>
+
+                        {/* Dots */}
+                        <div className='absolute -bottom-[2px] md:-bottom-[4px] -left-[2px] md:-left-[4px] size-1 md:size-2 rounded-full bg-muted-text ring-2 ring-main-background'></div>
+                        <div className='absolute -bottom-[2px] md:-bottom-[4px] -right-[2px] md:-right-[4px] size-1 md:size-2 rounded-full bg-muted-text ring-2 ring-main-background'></div>
+                        <div className='absolute -top-[2px] md:-top-[4px] -left-[2px] md:-left-[4px] size-1 md:size-2 rounded-full bg-muted-text ring-2 ring-main-background'></div>
+                        <div className='absolute -top-[2px] md:-top-[4px] -right-[2px] md:-right-[4px] size-1 md:size-2 rounded-full bg-muted-text ring-2 ring-main-background'></div>
+                    </div>
                 </div>
             </div>
         </section>

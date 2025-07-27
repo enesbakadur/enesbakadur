@@ -6,6 +6,8 @@
     --foreground: #edeef0;
     --muted-text: #777b84;
     --muted-background: #252629;
+    --stroke-background: #191a1c;
+    --stroke: #27282b;
     scroll-behavior: smooth;
 }
 
@@ -15,6 +17,8 @@
     --foreground: #1c2125;
     --muted-text: #80838d;
     --muted-background: #e5e6e7;
+    --stroke: #dadae0;
+    --stroke-background: #f0f0f2;
 }
 
 @theme inline {
@@ -23,6 +27,8 @@
     --color-foreground: var(--foreground);
     --color-muted-text: var(--muted-text);
     --color-muted-background: var(--muted-background);
+    --color-stroke: var(--stroke);
+    --color-stroke-background: var(--stroke-background);
 }
 
 body {

@@ -50,8 +50,8 @@ const ExperiencesList = [
         jobLocation: 'İstanbul, Türkiye',
         jobType: 'Stajyer',
         workingMethods: 'Remote',
-        startYear: 'Ocak 2022',
-        endYear: 'Mayıs 2022',
+        startYear: 'Şubat 2022',
+        endYear: 'Haziran 2022',
     },
 ];
 

@@ -106,11 +106,11 @@ export default function Experiences() {
                 </div>
                 <div className='w-full border-t-1 border-muted-text/20 flex justify-center'>
                     <div className='w-full flex items-center justify-center p-2 md:p-3 lg:p-4 relative'>
-                        <p
+                        {/* <p
                             className={`${jetBrainsMono.className} text-muted-text text-[0.625rem] md:text-xs uppercase antialiased whitespace-nowrap text-center`}
                         >
                             YENİ BİR İŞ ARAYIŞIM VAR.
-                        </p>
+                        </p> */}
 
                         {/* Dots */}
                         <div className='absolute -bottom-[2px] md:-bottom-[4px] -left-[2px] md:-left-[4px] size-1 md:size-2 rounded-full bg-muted-text ring-2 ring-main-background'></div>

@@ -1,22 +1,22 @@
 const ExperiencesList = [
     {
+        title: 'UI / UX Uzmanı',
+        company: 'Turkticaret.Net',
+        jobLocation: 'Bursa, Türkiye',
+        jobType: 'Tam Zamanlı',
+        workingMethods: 'İş Yerinde',
+        startYear: 'Eylül 2025',
+        endYear: 'Halen',
+    },
+    /* {
         title: 'Frontend Developer',
         company: 'Portsis Yazılım',
         jobLocation: 'Bursa, Türkiye',
         jobType: 'Freelancer',
         workingMethods: 'Hybrid',
         startYear: 'Mayıs 2025',
-        endYear: 'Halen',
-    },
-    {
-        title: 'Grafik Tasarımcı',
-        company: 'Dara Aksesuar',
-        jobLocation: 'Mardin, Türkiye',
-        jobType: 'Freelancer',
-        workingMethods: 'Remote',
-        startYear: '2017',
-        endYear: 'Halen',
-    },
+        endYear: 'Ağustos 2025',
+    }, */
     {
         title: 'Frontend Developer',
         company: 'Ürünver Mühendislik',
@@ -35,7 +35,7 @@ const ExperiencesList = [
         startYear: 'Temmuz 2022',
         endYear: 'Ekim 2022',
     },
-    {
+    /*   {
         title: 'Frontend Developer',
         company: 'Phonyloops',
         jobLocation: 'İstanbul, Türkiye',
@@ -43,7 +43,7 @@ const ExperiencesList = [
         workingMethods: 'Remote',
         startYear: 'Haziran 2022',
         endYear: 'Temmuz 2023',
-    },
+    }, */
     {
         title: 'Frontend Developer',
         company: 'Clockwork Agency',
